@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  seq:
+    image: datalust/seq:latest
+    ports:
+      - "5341:80"
+    environment:
+      ACCEPT_EULA: Y
+    restart: unless-stopped
+    volumes:
+      - ./seq-data:/data
+    networks:
+      - backend
+
+  api:
+    image: discounting
+    build:
+      context: .
+      dockerfile: Discounting.API/Dockerfile
+    environment:
+      DB_HOST: $DB_PROD_HOST
+      DB_NAME: $DB_PROD_NAME
+      DB_USER: $DB_PROD_USER
+      DB_PASS: $DB_PROD_PASS
+      DB_PORT: $DB_PROD_PORT
+    expose:
+      - "5000"
+    restart: unless-stopped
+    volumes:
+      - api_data:/app/Uploads/
+      - /app/log:/app/log
+    depends_on:
+      - seq
+    extra_hosts:
+      - "mx.dengi-etpgpb.ru:10.2.1.31"
+      - "cryptoservice-test.etpgpb.ru:10.2.1.100"
+    networks:
+      - backend
+    
+volumes:
+  api_data:
+    
+networks:
+  backend:
+    driver: bridge
+    name: discounting_backend

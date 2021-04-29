@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Discounting.Logics</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Discounting.Common\Discounting.Common.csproj" />
+    <ProjectReference Include="..\Discounting.Data\Discounting.Data.csproj" />
+    <ProjectReference Include="..\Discounting.Extensions\Discounting.Extensions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML.Report" Version="0.1.2" />
+    <PackageReference Include="EPPlus" Version="4.5.3.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+  </ItemGroup>
+
+</Project>

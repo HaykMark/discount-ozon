@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="9.0.0" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection">
+            <Version>7.0.0</Version>
+        </PackageReference>
+        <PackageReference Include="MailKit" Version="2.7.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.1.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="2.1.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.0.0-rc5" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.0.0-rc5" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="5.0.0-rc5" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Discounting.Entities\Discounting.Entities.csproj" />
+      <ProjectReference Include="..\Discounting.Extensions\Discounting.Extensions.csproj" />
+      <ProjectReference Include="..\Discounting.Logics\Discounting.Logics.csproj" />
+    </ItemGroup>
+
+</Project>
