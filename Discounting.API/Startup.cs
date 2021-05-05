@@ -175,10 +175,10 @@ namespace Discounting.API
 
             services.AddApiVersioning(o => o.ApiVersionReader = new MediaTypeApiVersionReader());
             services.AddHealthChecks();
-            services.AddHttpClient<SignatureVerifierService>(c =>
-            {
-                c.BaseAddress = new Uri(Configuration.GetSection("ApiSettings")["SignatureVerifierUrl"]);
-            });
+            // services.AddHttpClient<SignatureVerifierService>(c =>
+            // {
+            //     c.BaseAddress = new Uri(Configuration.GetSection("ApiSettings")["SignatureVerifierUrl"]);
+            // });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
